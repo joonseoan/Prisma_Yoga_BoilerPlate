@@ -1,0 +1,51 @@
+type Query {    
+    users(query: String, first: Int, skip: Int, after: String, orderBy: UserOrderByInput): [User!]!
+    me: User!
+}
+
+type Mutation {
+    createUser(data: createUserInput!): AuthPayload!
+    deleteUser: User!
+    updateUser(data: updateUserInput ): User!
+    login(data: loginInput): AuthPayload!
+}
+
+type AuthPayload {
+    token: String!
+    user: User!
+}
+
+# Must be commented out or otherwise it is invalid when creating a new boiler plate
+# type Subscription {}
+
+type User {
+    id: ID!
+    name: String!
+    email: String
+    password: String!
+    updatedAt: String!
+    createdAt: String!
+}
+
+input createUserInput {
+    name: String!
+    email: String!
+    password: String!
+}
+
+input updateUserInput {
+    name: String
+    email: String
+    password: String
+}
+
+input loginInput {
+    email: String!
+    password: String!
+}
+
+enum MutationType {
+    CREATED
+    UPDATED
+    DELETED    
+}

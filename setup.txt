@@ -1,0 +1,41 @@
+1. Right Clikc the previous project "test_graphql_prisma"
+2. Select "Duplicate File or Directory" and enter new project name
+3. Delete "dist" folder
+4. Reorgainize "models" in "datamodel.prisma"
+   => We do not need post and comment in the boiler plate to start another project
+
+5. "generated" folder should indeed stay
+6. In "resolver" folders, we should change many stuffs
+  - Delete
+    . Comment
+    . Post
+    . 
+  - Edit
+    . index.js
+      1) Delete Post and Comment
+    . Mutation
+      1) Delete everything related to "Post"
+      2) Delete everything related to "Comment"
+    . Query
+      1) Delete everything related to "Post"
+      2) Delete everything related to "Comment"
+    . Subscription
+      - Delete everything
+    . User
+      1) Delete post
+7. Utils : we do not need to delete anything here
+8. Resolvers : mapping over resolvers that deleted everything related posts and comments
+9. In server.js, leave them as they another
+10. In test folder, at seedDatabase.js, delete everthing related to post and comment
+11. Comment out subscription in schema and index.js of "Resolvers" 
+12. In project folder, rm -rf .git // ===> remove git repo
+13. git init, git add, git commit
+
+
+
+
+
+   
+
+
+
